@@ -2,8 +2,8 @@
   <div class="discovery-container">
     <!-- 轮播图 -->
     <el-carousel class="" :interval="4000" type="card">
-      <el-carousel-item v-for="item in 6" :key='item' >
-        <img src="../assets/banner.jpg" alt="" />
+      <el-carousel-item v-for="(item, index) in banners" :key="index">
+        <img :src="item.imageUrl" alt="" />
       </el-carousel-item>
     </el-carousel>
     <!-- 推荐歌单 -->
@@ -287,25 +287,29 @@
   </div>
 </template>
 
-<script lang='ts'>
-
-import { Component, Prop, Vue } from "vue-property-decorator"; 
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import axios from "axios";
 
 @Component({
-  components:{
+  components: {
     discovery
   }
 })
 
-export default class discovery extends Vue{
- // name ='discovery'
- }
+export default class discovery extends Vue {
+  banners!: any[];
 
-// export default {
-//   name: 'discovery'
-// };
+  // 组件初始化的会调用
+  created() {
+    axios({
+      url: "https://autumnfish.cn/banner",
+      method: "get"
+    }).then(res => {
+      this.banners = res.data.banners;
+    });
+  }
+}
 </script>
 
-<style >
-
-</style>
+<style></style>
