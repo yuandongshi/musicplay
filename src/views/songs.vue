@@ -64,17 +64,24 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'songs',
-  data() {
-    return {
- 
-    };
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+
+@Component({
+  components: {
+    songs
   }
-};
+})
+export default class songs extends Vue {}
+
+// export default {
+//   name: 'songs',
+//   data() {
+//     return {
+
+//     };
+//   }
+// };
 </script>
 
-<style >
-
-</style>
+<style></style>

@@ -290,6 +290,13 @@
 <script lang='ts'>
 
 import { Component, Prop, Vue } from "vue-property-decorator"; 
+
+@Component({
+  components:{
+    discovery
+  }
+})
+
 export default class discovery extends Vue{
  // name ='discovery'
  }

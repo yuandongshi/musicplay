@@ -1,8 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 // 1.导入 2. use一下 3. 创建路由 4. 挂在到vue实例上去
-import Router from "vue-router";
-Vue.use(Router);
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
 
 // 导入全局初始化样式
 import './assets/index.css'
@@ -17,14 +17,14 @@ Vue.use(ElementUI);
 
 // 导入所有需要进行导航的组件
 import discovery from './views/discovery.vue';
-import playlists from './views/playlists.vue';
-//import songs from './views/songs.vue';
-//import mvs from './views/mvs.vue';
-//import result from './views/result.vue'
-//import playlist from './views/playlist.vue'
-//import mv from './views/mv.vue'
+//import playlists from './views/playlists.vue';
+import songs from './views/songs.vue';
+import mvs from './views/mvs.vue';
+import result from './views/result.vue'
+import playlist from './views/playlist.vue'
+import mv from './views/mv.vue'
 
-let router = new Router({
+let router = new VueRouter({
   routes: [
     // 配置地址和组件的对应关系
     {
@@ -41,41 +41,41 @@ let router = new Router({
       // 组件
       component: ()=>import('./views/playlists.vue')
     },
-    // {
-    //   //地址
-    //   path: "/songs",
+    {
+      //地址
+      path: "/songs",
 
-    //   // 组件
-    //   component: songs
-    // },
-    // {
-    //   //地址
-    //   path: "/mvs",
+      // 组件
+      component: songs
+    },
+    {
+      //地址
+      path: "/mvs",
 
-    //   // 组件
-    //   component: mvs
-    // },
-    // {
-    //   //地址
-    //   path: "/result",
+      // 组件
+      component: mvs
+    },
+    {
+      //地址
+      path: "/result",
 
-    //   // 组件
-    //   component: result
-    // },
-    // {
-    //   //地址
-    //   path: "/playlist",
+      // 组件
+      component: result
+    },
+    {
+      //地址
+      path: "/playlist",
 
-    //   // 组件
-    //   component: playlist
-    // },
-    // {
-    //   //地址
-    //   path: "/mv",
+      // 组件
+      component: playlist
+    },
+    {
+      //地址
+      path: "/mv",
 
-    //   // 组件
-    //   component: mv
-    // }
+      // 组件
+      component: mv
+    }
   ]
 });
 

@@ -157,30 +157,52 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'mvs',
-  data() {
-    return {
-      // 总条数
-      total: 20,
-      // 页码
-      page: 1,
-      // 页容量
-      limit: 10
-    };
-  },
-  methods: {
-    toMv(id) {
-      this.$router.push(`/mv?id=${id}`);
-    },
-    handleCurrentChange(val) {
-      console.log(`当前页: ${val}`);
-    }
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+
+@Component({
+  components: {
+    mvs
   }
-};
+})
+
+export default class mvs extends Vue {
+  total: number = 20;
+  // 页码
+  page: number = 1;
+  // 页容量
+  limit: number = 10;
+
+  toMv(id: number):void {
+    this.$router.push(`/mv?id=${id}`);
+  }
+
+  handleCurrentChange(val:number):void {
+    console.log(`当前页: ${val}`);
+  }
+}
+
+// export default {
+//   name: 'mvs',
+//   data() {
+//     return {
+//       // 总条数
+//       total: 20,
+//       // 页码
+//       page: 1,
+//       // 页容量
+//       limit: 10
+//     };
+//   },
+//   methods: {
+//     toMv(id) {
+//       this.$router.push(`/mv?id=${id}`);
+//     },
+//     handleCurrentChange(val) {
+//       console.log(`当前页: ${val}`);
+//     }
+//   }
+// };
 </script>
 
-<style >
-
-</style>
+<style></style>

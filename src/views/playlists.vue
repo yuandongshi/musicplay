@@ -176,7 +176,14 @@
 
 <script lang='ts'>
 import { Component, Prop, Vue } from "vue-property-decorator"; 
-export default class recommend extends Vue{
+
+@Component({
+components:{
+  playlists
+}
+})
+
+export default class playlists extends Vue{
   total=0;
       // 页码
       page=1
