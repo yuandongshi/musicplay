@@ -5,30 +5,37 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 // 导入全局初始化样式
-import './assets/index.css'
+import "./assets/index.css";
 
-// 导入 Element_ui 
-import ElementUI from 'element-ui';
+// 导入 Element_ui
+import ElementUI from "element-ui";
 // 导入 Element-ui 样式
-import 'element-ui/lib/theme-chalk/index.css';
+import "element-ui/lib/theme-chalk/index.css";
 // 插件 Element-ui
 Vue.use(ElementUI);
 
-
 // 导入所有需要进行导航的组件
-import discovery from './views/discovery.vue';
+import discovery from "./views/discovery.vue";
 //import playlists from './views/playlists.vue';
-import songs from './views/songs.vue';
-import mvs from './views/mvs.vue';
-import result from './views/result.vue'
-import playlist from './views/playlist.vue'
-import mv from './views/mv.vue'
+import songs from "./views/songs.vue";
+import mvs from "./views/mvs.vue";
+import result from "./views/result.vue";
+import playlist from "./views/playlist.vue";
+import mv from "./views/mv.vue";
 
 let router = new VueRouter({
   routes: [
     // 配置地址和组件的对应关系
     {
-      //地址
+      //根目录
+      path: "/",
+
+      // 组件
+      component: discovery
+    },
+    // 配置地址和组件的对应关系
+    {
+      //发现音乐
       path: "/discovery",
 
       // 组件
@@ -39,24 +46,24 @@ let router = new VueRouter({
       path: "/playlists",
 
       // 组件
-      component: ()=>import('./views/playlists.vue')
+      component: () => import("./views/playlists.vue")
     },
     {
-      //地址
+      //最新音乐
       path: "/songs",
 
       // 组件
       component: songs
     },
     {
-      //地址
+      //最新mv
       path: "/mvs",
 
       // 组件
       component: mvs
     },
     {
-      //地址
+      //搜索结果
       path: "/result",
 
       // 组件
@@ -70,7 +77,7 @@ let router = new VueRouter({
       component: playlist
     },
     {
-      //地址
+      //MV详情
       path: "/mv",
 
       // 组件
