@@ -3,25 +3,15 @@
     <!-- 同步 -->
     <div class="top-card">
       <div class="icon-wrap">
-        <img src="../assets/listCover.jpg" alt="" />
+        <img :src="highqualitySong.coverImgUrl" alt="" />
       </div>
       <div class="content-wrap">
         <div class="tag">精品歌单</div>
         <div class="title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, laborum.
+          {{highqualitySong.name}}
         </div>
         <div class="info">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-          velit suscipit cumque incidunt ad vitae quos dicta temporibus, at,
-          labore harum libero. Officiis commodi illo, minus sed ad ab provident,
-          maxime nobis culpa esse iste quibusdam! Doloribus itaque quia
-          recusandae? Incidunt cumque non et minus magni dolores repudiandae
-          quia quas esse ipsam labore doloremque, maxime nobis odio ab.
-          Distinctio nemo nostrum numquam dolores labore laboriosam doloremque
-          harum vero aliquam sit et quam laborum magnam animi, quae beatae
-          fugiat sapiente! Perspiciatis libero atque ratione quam reprehenderit
-          numquam distinctio. Maxime reprehenderit, dicta placeat enim
-          laudantium voluptatem, ab eveniet nulla asperiores minima quidem!
+          {{highqualitySong.description}}
         </div>
       </div>
       <img src="../assets/listCover.jpg" alt="" class="bg" />
@@ -30,133 +20,21 @@
     <div class="tab-container">
       <!-- tab栏 顶部 -->
       <div class="tab-bar">
-        <span class="item active">全部</span>
-        <span class="item">欧美</span>
-        <span class="item">华语</span>
-        <span class="item">流行</span>
-        <span class="item">说唱</span>
-        <span class="item">摇滚</span>
-        <span class="item">民谣</span>
-        <span class="item">电子</span>
-        <span class="item">轻音乐</span>
-        <span class="item">影视原声</span>
-        <span class="item">ACG</span>
-        <span class="item">怀旧</span>
-        <span class="item">治愈</span>
-        <span class="item">旅行</span>
+        <span class="item" v-for="(item,index) in catagory" :key='index' :class="{active:item==currentcat}" @click="refreshTag(item)">{{item}}</span>
       </div>
       <!-- tab的内容区域 -->
       <div class="tab-content">
         <div class="items">
-          <div class="item">
+          <div class="item" v-for="item in playlist" :key='item.id'>
             <div class="img-wrap">
               <div class="num-wrap">
                 播放量:
-                <span class="num">66892</span>
+                <span class="num">{{item.playCount}}</span>
               </div>
-              <img src="../assets/cover.jpg" alt="" />
+              <img :src="item.coverImgUrl" alt="" />
               <span class="iconfont icon-play"></span>
             </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
-          </div>
-          <div class="item">
-            <div class="img-wrap">
-              <div class="num-wrap">
-                播放量:
-                <span class="num">66892</span>
-              </div>
-              <img src="../assets/cover.jpg" alt="" />
-              <span class="iconfont icon-play"></span>
-            </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
-          </div>
-          <div class="item">
-            <div class="img-wrap">
-              <div class="num-wrap">
-                播放量:
-                <span class="num">66892</span>
-              </div>
-              <img src="../assets/cover.jpg" alt="" />
-              <span class="iconfont icon-play"></span>
-            </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
-          </div>
-          <div class="item">
-            <div class="img-wrap">
-              <div class="num-wrap">
-                播放量:
-                <span class="num">66892</span>
-              </div>
-              <img src="../assets/cover.jpg" alt="" />
-              <span class="iconfont icon-play"></span>
-            </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
-          </div>
-          <div class="item">
-            <div class="img-wrap">
-              <div class="num-wrap">
-                播放量:
-                <span class="num">66892</span>
-              </div>
-              <img src="../assets/cover.jpg" alt="" />
-              <span class="iconfont icon-play"></span>
-            </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
-          </div>
-          <div class="item">
-            <div class="img-wrap">
-              <div class="num-wrap">
-                播放量:
-                <span class="num">66892</span>
-              </div>
-              <img src="../assets/cover.jpg" alt="" />
-              <span class="iconfont icon-play"></span>
-            </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
-          </div>
-          <div class="item">
-            <div class="img-wrap">
-              <div class="num-wrap">
-                播放量:
-                <span class="num">66892</span>
-              </div>
-              <img src="../assets/cover.jpg" alt="" />
-              <span class="iconfont icon-play"></span>
-            </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
-          </div>
-          <div class="item">
-            <div class="img-wrap">
-              <div class="num-wrap">
-                播放量:
-                <span class="num">66892</span>
-              </div>
-              <img src="../assets/cover.jpg" alt="" />
-              <span class="iconfont icon-play"></span>
-            </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
-          </div>
-          <div class="item">
-            <div class="img-wrap">
-              <div class="num-wrap">
-                播放量:
-                <span class="num">66892</span>
-              </div>
-              <img src="../assets/cover.jpg" alt="" />
-              <span class="iconfont icon-play"></span>
-            </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
-          </div>
-          <div class="item">
-            <div class="img-wrap">
-              <div class="num-wrap">
-                播放量:
-                <span class="num">66892</span>
-              </div>
-              <img src="../assets/cover.jpg" alt="" />
-              <span class="iconfont icon-play"></span>
-            </div>
-            <p class="name">编辑推荐：一起探索这个未知的音乐罐头吧！</p>
+            <p class="name">{{item.description}}</p>
           </div>
         </div>
       </div>
@@ -168,49 +46,89 @@
       layout="prev, pager, next"
       :total="total"
       :current-page="page"
-      :page-size="20"
+      :page-size='pagesize'
     >
     </el-pagination>
   </div>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from "vue-property-decorator"; 
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import axios from "axios";
 
 @Component({
-components:{
-  playlists
-}
+  components: {
+    playlists
+  }
 })
 
-export default class playlists extends Vue{
-  total=0;
-      // 页码
-      page=1
+export default class playlists extends Vue {
+  total = 0;
+  // 页码
+  page = 1;
+  pagesize=10
 
-      handleCurrentChange(val:number) {
-      console.log(`当前页: ${val}`);
-    }
+  // 当前分组
+  currentcat:string='全部';
+  highqualitySong:any='';
+
+  // 全部分组
+  catagory:string[]=['全部','欧美','华语','流行','说唱','摇滚','民谣','电子','轻音乐','影视原声','ACG','怀旧','治愈','旅行'];
+
+  playlist:any[]=[];
+
+  created() {
+    this.gethighqualitysong();
+    this.getpalylists();
+  }
+
+  refreshTag(tag:string)
+  {
+    this.currentcat=tag;
+    this.page=1;
+    this.gethighqualitysong();
+    this.getpalylists();
+  }
+
+  handleCurrentChange(val: number) {
+    this.page=val;
+    //console.log(`当前页: ${val}`);
+    this.getpalylists();
+  }
+
+  gethighqualitysong():void {
+    axios({
+      url: "https://autumnfish.cn/top/playlist/highquality",
+      method: "get",
+      params: {
+        limit:1,
+        cat:this.currentcat
+      }
+    }).then(res => {
+     // console.log(res);
+     this.highqualitySong=res.data.playlists[0];
+    });
+  }
+
+  getpalylists():void
+  {
+    axios({
+      url:'https://autumnfish.cn/top/playlist/',
+      method:'get',
+      params:{
+        limit:this.pagesize,
+        offset:(this.page-1)*this.pagesize,
+        cat:this.currentcat
+      }
+    }).then(
+      res=>{
+     //console.log(res)
+      this.playlist=res.data.playlists;
+      this.total=res.data.total;
+      }
+    );
+  }
 }
-
-// export default {
-//   name: 'recommend',
-//   data() {
-//     return {
-//       // 总条数
-//       total:0,
-//       // 页码
-//       page:1
-//     };
-//   },
-//   methods: {
-//     handleCurrentChange(val) {
-//       console.log(`当前页: ${val}`);
-//     }
-//   }
-// };
 </script>
 
-<style >
-
-</style>
+<style></style>
