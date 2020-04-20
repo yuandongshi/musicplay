@@ -1,4 +1,4 @@
-见项目wiki 嘻嘻
+见项目wiki
 # musicplay
 
 ## Project setup
