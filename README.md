@@ -1,4 +1,4 @@
-见项目wiki ceshi  
+见项目wiki 
 # musicplay
 
 ## Project setup
